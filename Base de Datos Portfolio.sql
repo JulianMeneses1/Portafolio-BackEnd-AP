@@ -17,7 +17,8 @@ create table Conocimientos (
 id INT PRIMARY KEY NOT NULL auto_increment,
 nombre varchar(50),
 icono varchar(100),
-titulo varchar(30)
+titulo varchar(30),
+porcentajeProgreso varchar(50)
 );
 
 create table Banner (
@@ -59,6 +60,7 @@ fecha_fin DATE,
 puesto varchar(100),
 url varchar(100),
 personas_id int,
+posicionY varchar (50),
 foreign key (personas_id) references Experiencia_laboral (id)
 );
 
