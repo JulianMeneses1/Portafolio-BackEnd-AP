@@ -80,5 +80,8 @@ nombre varchar(50),
 descripcion varchar(200),
 imagen varchar(100),
 personas_id int,
+url_github varchar (100),
+url_sitioweb varchar (100),
+tecnologias varchar (100),
 foreign key (personas_id) references Proyectos (id)
 )
