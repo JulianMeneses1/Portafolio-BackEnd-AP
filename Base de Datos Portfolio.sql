@@ -13,14 +13,6 @@ titulo varchar(50),
 descripcion varchar(200)
 );
 
-create table Conocimientos (
-id INT PRIMARY KEY NOT NULL auto_increment,
-nombre varchar(50),
-icono varchar(100),
-titulo varchar(30),
-porcentajeProgreso varchar(50)
-);
-
 create table Banner (
 id INT PRIMARY KEY NOT NULL auto_increment,
 titulo varchar(50),
@@ -42,12 +34,13 @@ foreign key (usuario) references Usuarios (usuario),
 foreign key (acerca_de_mi_id) references Acerca_de_mi (id)
 );
 
-create table Conocimientos_Personas (
-id INT PRIMARY KEY auto_increment,
-personas_id INT,
-conocimientos_id INT,
-foreign key (personas_id) references Personas (id),
-foreign key (conocimientos_id) references Conocimientos(id)
+create table Conocimientos (
+id INT PRIMARY KEY NOT NULL auto_increment,
+nombre varchar(50),
+icono varchar(100),
+titulo varchar(30),
+porcentajeProgreso varchar(50),
+foreign key (personas_id) references Conocimientos (id)
 );
 
 create table Experiencia_laboral (
@@ -83,5 +76,26 @@ personas_id int,
 url_github varchar (100),
 url_sitioweb varchar (100),
 tecnologias varchar (100),
-foreign key (personas_id) references Proyectos (id)
-)
+foreign key (personas_id) references Proyectos (id),
+foreign key (titulo_proyectos_id) references Proyectos (id)
+);
+
+create table Titulo_proyectos (
+id INT PRIMARY KEY NOT NULL auto_increment,
+titulo varchar(30)
+);
+
+create table Titulo_conocimientos (
+id INT PRIMARY KEY NOT NULL auto_increment,
+titulo varchar(30)
+);
+create table Titulo_formacion_academica (
+id INT PRIMARY KEY NOT NULL auto_increment,
+titulo varchar(30)
+);
+create table Titulo_experiencia_laboral (
+id INT PRIMARY KEY NOT NULL auto_increment,
+titulo varchar(30)
+);
+
+
