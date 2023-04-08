@@ -1,10 +1,10 @@
-package com.backend.PortfolioWeb;
+package com.julianmeneses.proyectoSpringBoot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PortfolioWebApplicationTests {
+class ProyectoSpringBootApplicationTests {
 
 	@Test
 	void contextLoads() {

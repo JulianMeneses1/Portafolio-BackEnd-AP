@@ -1,13 +1,13 @@
-package com.backend.PortfolioWeb;
+package com.julianmeneses.proyectoSpringBoot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PortfolioWebApplication {
+public class ProyectoSpringBootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PortfolioWebApplication.class, args);
+		SpringApplication.run(ProyectoSpringBootApplication.class, args);
 	}
 
 }
