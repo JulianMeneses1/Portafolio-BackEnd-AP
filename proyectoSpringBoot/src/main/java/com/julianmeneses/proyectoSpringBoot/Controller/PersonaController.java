@@ -2,6 +2,7 @@
 package com.julianmeneses.proyectoSpringBoot.Controller;
 
 import com.julianmeneses.proyectoSpringBoot.Model.Persona;
+import com.julianmeneses.proyectoSpringBoot.Service.IEncryptService;
 import com.julianmeneses.proyectoSpringBoot.Service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,15 @@ public class PersonaController {
     
     @GetMapping ("/traer/personas")
     public List <Persona> obtenerPersonas () {
+        
         return personaService.obtenerPersonas();
     }
     
     @GetMapping ("/traer/persona/{id}")
     public Persona obtenerPersona (@PathVariable Long id) {
+        
         return personaService.obtenerPersona(id);
+        
     }
     
     @PutMapping ("/editar/persona/{id}")
