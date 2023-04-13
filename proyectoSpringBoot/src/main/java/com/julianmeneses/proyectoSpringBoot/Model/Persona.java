@@ -2,6 +2,7 @@
 package com.julianmeneses.proyectoSpringBoot.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.julianmeneses.proyectoSpringBoot.Security.Model.Usuario;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
