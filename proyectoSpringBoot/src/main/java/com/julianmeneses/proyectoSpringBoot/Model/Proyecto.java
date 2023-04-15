@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import java.util.Date;
 import lombok.Getter;
@@ -18,7 +19,8 @@ import lombok.Setter;
 public class Proyecto {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "proyectos_seq", sequenceName = "proyectos_seq", allocationSize = 1) 
     private Long id;
     private String imagen;
     private String descripcion;

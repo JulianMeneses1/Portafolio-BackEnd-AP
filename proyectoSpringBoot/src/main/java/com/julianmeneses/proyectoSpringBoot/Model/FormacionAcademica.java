@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import java.util.Date;
 import lombok.Getter;
@@ -19,7 +20,8 @@ import lombok.Setter;
 public class FormacionAcademica {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "formaciones_academicas_seq", sequenceName = "formaciones_academicas_seq", allocationSize = 1) 
     private Long id;
     private String nombre;
     private String descripcion;

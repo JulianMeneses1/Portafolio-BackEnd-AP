@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import java.util.List;
 import lombok.Getter;
@@ -18,7 +19,8 @@ import lombok.Setter;
 public class TituloSeccion {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "titulos_secciones_seq", sequenceName = "titulos_secciones_seq", allocationSize = 1)
     private Long id;
     private String titulo; 
     
