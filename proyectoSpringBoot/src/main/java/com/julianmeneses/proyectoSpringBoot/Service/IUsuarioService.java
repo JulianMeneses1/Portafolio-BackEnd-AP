@@ -2,13 +2,19 @@
 
 package com.julianmeneses.proyectoSpringBoot.Service;
 
+import com.julianmeneses.proyectoSpringBoot.Model.Usuario;
+import java.util.List;
 
-public interface IEncryptService {
+
+public interface IUsuarioService {
     
-    // este método recibe la contraseña que el usuario ingresa, y va a devolver la contraseña encriptada
-    String encryptPassword (String password);
+    public List<Usuario> obtenerUsuarios();
     
-    // este método valida que la contraseña ingresada (sin codificar) sea igual a la encriptada (hash)
-    boolean verifyPassword (String originalPassword, String hashPassword);
+    public Usuario obtenerUsuario(Long id);   
     
+    public void crearUsuario(Usuario usuario);
+    
+    public String verificarUsuario (Usuario usuario);
+    
+     
 }

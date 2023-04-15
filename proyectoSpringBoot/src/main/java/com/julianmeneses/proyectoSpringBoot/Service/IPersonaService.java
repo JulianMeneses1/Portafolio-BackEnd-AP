@@ -14,7 +14,7 @@ public interface IPersonaService {
     public Persona obtenerPersona(Long id);  
     
     //método para editar una persona
-    public void editarPersona (Persona perso,String email, String  telefono, String ubicacion);
+    public void crearPersona (Persona perso);
 
     
 }

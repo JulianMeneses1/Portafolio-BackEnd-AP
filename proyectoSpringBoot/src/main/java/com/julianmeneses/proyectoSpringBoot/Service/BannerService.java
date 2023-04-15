@@ -24,12 +24,7 @@ public class BannerService implements IBannerService {
     }
 
     @Override
-    public void editarBanner(Banner banner, String imagen_banner, String imagen_perfil, String titulo, String subtitulo) {
-        banner.setImagen_banner(imagen_banner);
-        banner.setImagen_perfil(imagen_perfil);
-        banner.setTitulo(titulo);
-        banner.setSubtitulo(subtitulo);
-        
+    public void crearBanner(Banner banner) {
         bannerRepository.save(banner);
         
     }

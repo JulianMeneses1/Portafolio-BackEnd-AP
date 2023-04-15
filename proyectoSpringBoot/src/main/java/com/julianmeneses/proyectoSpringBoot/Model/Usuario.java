@@ -1,6 +1,7 @@
 
 package com.julianmeneses.proyectoSpringBoot.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +23,7 @@ public class Usuario {
     private String contraseña;
     private boolean estado_login;    
     
+    @JsonIgnore
     @OneToOne (mappedBy = "usuario")
     private Persona persona;
 
@@ -33,6 +35,14 @@ public class Usuario {
     }
 
     public Usuario() {
+    }
+    
+    public boolean getEstadoLogin () {
+        return this.estado_login;
+    }
+    
+    public void setEstadoLogin (boolean estado) {
+        this.estado_login=estado;
     }
     
 }

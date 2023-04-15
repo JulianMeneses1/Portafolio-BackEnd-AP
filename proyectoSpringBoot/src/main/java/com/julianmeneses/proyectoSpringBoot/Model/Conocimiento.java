@@ -1,7 +1,6 @@
 
 package com.julianmeneses.proyectoSpringBoot.Model;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,11 +23,12 @@ public class Conocimiento {
     private String nombre;
     private String porcentaje_progreso;
     
-    @ManyToOne (cascade = CascadeType.ALL)
+    
+    @ManyToOne
     @JoinColumn (name = "persona_id")
     private Persona persona;
     
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn (name = "titulo_seccion_id")
     private TituloSeccion titulo_seccion;    
 

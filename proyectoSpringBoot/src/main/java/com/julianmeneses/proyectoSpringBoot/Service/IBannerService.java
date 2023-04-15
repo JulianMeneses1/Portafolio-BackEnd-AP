@@ -11,7 +11,7 @@ public interface IBannerService {
     
     public Banner obtenerBanner(Long id);  
     
-    public void editarBanner (Banner banner,String imagen_banner, String  imagen_perfil, String titulo, String subtitulo);
+    public void crearBanner (Banner banner);
 
     
 }

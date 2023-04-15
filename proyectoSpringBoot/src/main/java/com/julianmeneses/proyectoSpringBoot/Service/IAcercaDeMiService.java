@@ -12,7 +12,7 @@ public interface IAcercaDeMiService {
     
     public AcercaDeMi obtenerAcerca(Long id);  
     
-    public void editarAcercaDeMi (AcercaDeMi acerca,String titulo, String  descripcion);
+    public void crearAcercaDeMi (AcercaDeMi acerca);
 
     
 }

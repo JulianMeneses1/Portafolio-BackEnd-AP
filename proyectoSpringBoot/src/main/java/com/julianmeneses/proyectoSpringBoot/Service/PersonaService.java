@@ -24,11 +24,7 @@ public class PersonaService implements IPersonaService {
     }
 
     @Override
-    public void editarPersona(Persona perso, String email, String telefono, String ubicacion) {
-        
-        perso.setEmail(email);
-        perso.setTelefono(telefono);
-        perso.setUbicacion(ubicacion);
+    public void crearPersona(Persona perso) {         
         
         persoRepository.save(perso);
     }

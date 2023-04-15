@@ -1,6 +1,7 @@
 
 package com.julianmeneses.proyectoSpringBoot.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,16 +24,16 @@ public class Banner {
     private String titulo;
     private String subtitulo;
     
+    @JsonIgnore
     @OneToOne (mappedBy = "banner")
     private Persona persona;
 
-    public Banner(Long id, String imagen_banner, String imagen_perfil, String titulo, String subtitulo, Persona persona) {
+    public Banner(Long id, String imagen_banner, String imagen_perfil, String titulo, String subtitulo) {
         this.id = id;
         this.imagen_banner = imagen_banner;
         this.imagen_perfil = imagen_perfil;
         this.titulo = titulo;
         this.subtitulo = subtitulo;
-        this.persona = persona;
     }
 
     

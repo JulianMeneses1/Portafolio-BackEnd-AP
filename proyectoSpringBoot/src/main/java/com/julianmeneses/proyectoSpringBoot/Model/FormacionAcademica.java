@@ -26,11 +26,11 @@ public class FormacionAcademica {
     private Date fecha_inicio;
     private Date fecha_fin;
     
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne 
     @JoinColumn (name = "persona_id")
     private Persona persona;
     
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne 
     @JoinColumn (name = "titulo_seccion_id")
     private TituloSeccion titulo_seccion;    
 

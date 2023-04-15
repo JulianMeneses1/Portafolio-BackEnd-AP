@@ -1,6 +1,7 @@
 
 package com.julianmeneses.proyectoSpringBoot.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,23 +22,16 @@ public class AcercaDeMi {
     private String titulo;
     private String descripcion;
     
+    @JsonIgnore
     @OneToOne (mappedBy = "acerca_de_mi")
     private Persona persona;
 
-    public AcercaDeMi(Long id, String titulo, String descripcion, Persona persona) {
+    public AcercaDeMi(Long id, String titulo, String descripcion) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.persona = persona;
     }
     
     public AcercaDeMi() {
     }
-    
-    
-
-  
-    
-    
-
 }

@@ -41,12 +41,12 @@ public class ExperienciaLaboralService implements IExperienciaLaboralService {
 
     @Override
     public void borrarExperiencia(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        expRepository.deleteById(id);
     }
 
     @Override
     public void crearExperiencia(ExperienciaLaboral exp) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        expRepository.save(exp);
     }
 
 }

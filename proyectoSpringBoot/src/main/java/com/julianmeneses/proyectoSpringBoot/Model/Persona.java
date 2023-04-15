@@ -1,15 +1,18 @@
 
 package com.julianmeneses.proyectoSpringBoot.Model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,22 +28,36 @@ public class Persona {
     private String apellido;
     private String email;
     private String telefono;
-    private String ubicacion;
+    private String ubicacion;    
     
-    @JsonBackReference
-    @OneToOne (cascade = CascadeType.ALL)
+    @OneToOne 
     @JoinColumn (name = "usuario_id")
     private Usuario usuario;
     
-    @JsonBackReference
-    @OneToOne (cascade = CascadeType.ALL)
+    @OneToOne 
     @JoinColumn (name = "banner_id")
-    private Banner banner;
+    private Banner banner;    
     
-    @JsonBackReference
-    @OneToOne (cascade = CascadeType.ALL)
+    @OneToOne 
     @JoinColumn (name = "acerca_de_mi_id")
     private AcercaDeMi acerca_de_mi;
+    
+    @JsonIgnore
+    @OneToMany (mappedBy = "persona")
+    List <Conocimiento> conocimientos;
+    
+    @JsonIgnore
+    @OneToMany (mappedBy = "persona")
+    List <Proyecto> proyectos;
+    
+    @JsonIgnore
+    @OneToMany (mappedBy = "persona")
+    List <FormacionAcademica> formaciones;
+     
+    @JsonIgnore
+    @OneToMany (mappedBy = "persona")
+    List <ExperienciaLaboral> experiencias;
+    
 
     public Persona(Long id, String nombre, String apellido, String email, String telefono, String ubicacion, Usuario usuario, Banner banner, AcercaDeMi acerca_de_mi) {
         this.id = id;
@@ -53,16 +70,6 @@ public class Persona {
         this.banner = banner;
         this.acerca_de_mi = acerca_de_mi;
     }
-
-    
-
     public Persona() {
     }
-    
-    
-
-  
-    
-    
-
 }

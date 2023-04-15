@@ -12,6 +12,6 @@ public interface ITituloSeccionService {
     
     public TituloSeccion obtenerTitulo(Long id);  
     
-    public void editarTitulo (TituloSeccion tit, String titulo);
+    public void crearTitulo (TituloSeccion titulo);
     
 }

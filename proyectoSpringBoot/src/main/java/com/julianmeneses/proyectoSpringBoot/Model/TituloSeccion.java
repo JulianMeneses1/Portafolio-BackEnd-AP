@@ -1,12 +1,14 @@
 
 package com.julianmeneses.proyectoSpringBoot.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,27 +20,27 @@ public class TituloSeccion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String titulo;   
+    private String titulo; 
     
-    @OneToOne (mappedBy = "titulo_seccion")
-    private Proyecto proyecto;
+    @JsonIgnore    
+    @OneToMany (mappedBy = "titulo_seccion")
+    private List <Proyecto> proyectos;
     
-    @OneToOne (mappedBy = "titulo_seccion")
-    private Conocimiento conocimiento;
+    @JsonIgnore   
+    @OneToMany (mappedBy = "titulo_seccion")
+    private List <Conocimiento> conocimientos;
     
-    @OneToOne (mappedBy = "titulo_seccion")
-    private ExperienciaLaboral experiencia_laboral;
+    @JsonIgnore   
+    @OneToMany (mappedBy = "titulo_seccion")
+    private List <ExperienciaLaboral> experiencias;
     
-    @OneToOne (mappedBy = "titulo_seccion")
-    private FormacionAcademica formacion_academica;
+    @JsonIgnore   
+    @OneToMany (mappedBy = "titulo_seccion")
+    private List <FormacionAcademica> formaciones;
 
-    public TituloSeccion(Long id, String titulo, Proyecto proyecto, Conocimiento conocimiento, ExperienciaLaboral experiencia_laboral, FormacionAcademica formacion_academica) {
+    public TituloSeccion(Long id, String titulo) {
         this.id = id;
-        this.titulo = titulo;
-        this.proyecto = proyecto;
-        this.conocimiento = conocimiento;
-        this.experiencia_laboral = experiencia_laboral;
-        this.formacion_academica = formacion_academica;
+        this.titulo = titulo;     
     }
 
     public TituloSeccion() {

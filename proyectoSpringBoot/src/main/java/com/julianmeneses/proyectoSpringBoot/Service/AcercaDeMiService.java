@@ -25,10 +25,7 @@ public class AcercaDeMiService implements IAcercaDeMiService {
     }
 
     @Override
-    public void editarAcercaDeMi(AcercaDeMi acerca, String titulo, String descripcion) {
-        
-        acerca.setTitulo(titulo);
-        acerca.setDescripcion(descripcion);
+    public void crearAcercaDeMi(AcercaDeMi acerca) {    
         
         acercaRepository.save(acerca);
     }

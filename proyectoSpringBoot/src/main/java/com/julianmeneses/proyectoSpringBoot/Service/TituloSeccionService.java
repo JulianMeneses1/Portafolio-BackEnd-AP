@@ -24,10 +24,10 @@ public class TituloSeccionService implements ITituloSeccionService {
     }
 
     @Override
-    public void editarTitulo(TituloSeccion tit, String titulo) {
+    public void crearTitulo(TituloSeccion titulo) { 
         
-        tit.setTitulo(titulo);
         
-        tituloRepository.save(tit);    }
+        tituloRepository.save(titulo);    
+    }
 
 }
