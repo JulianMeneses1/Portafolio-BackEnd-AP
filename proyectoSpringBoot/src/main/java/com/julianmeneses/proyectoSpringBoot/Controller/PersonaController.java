@@ -18,13 +18,13 @@ public class PersonaController {
     @Autowired
     public IPersonaService personaService;
     
-    @GetMapping ("/personas/traer")
+    @GetMapping ("/obtener/personas")
     public List <Persona> obtenerPersonas () {        
         
         return personaService.obtenerPersonas();
     }
     
-    @GetMapping ("/persona/traer/{id}")
+    @GetMapping ("/obtener/persona/{id}")
     public Persona obtenerPersona (@PathVariable Long id) {
         
         return personaService.obtenerPersona(id);

@@ -13,8 +13,5 @@ public interface IUsuarioService {
     public Usuario obtenerUsuario(Long id);   
     
     public void crearUsuario(Usuario usuario);
-    
-    public String verificarUsuario (Usuario usuario);
-    
      
 }

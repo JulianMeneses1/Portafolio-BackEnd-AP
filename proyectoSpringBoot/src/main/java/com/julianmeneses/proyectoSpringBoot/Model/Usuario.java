@@ -2,6 +2,7 @@
 package com.julianmeneses.proyectoSpringBoot.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,30 +22,21 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "usuarios_seq", sequenceName = "usuarios_seq", allocationSize = 1)
     private Long id;
+    @Column(nullable = false, unique = true)
     private String usuario;
-    private String contraseña;
-    private boolean estado_login;    
+    private String contraseña; 
     
     @JsonIgnore
     @OneToOne (mappedBy = "usuario")
     private Persona persona;
 
-    public Usuario(Long id, String usuario, String contraseña, boolean estado_login) {
+    public Usuario(Long id, String usuario, String contraseña) {
         this.id = id;
         this.usuario = usuario;
         this.contraseña = contraseña;
-        this.estado_login = estado_login;
     }
 
     public Usuario() {
-    }
-    
-    public boolean getEstadoLogin () {
-        return this.estado_login;
-    }
-    
-    public void setEstadoLogin (boolean estado) {
-        this.estado_login=estado;
-    }
+    } 
     
 }

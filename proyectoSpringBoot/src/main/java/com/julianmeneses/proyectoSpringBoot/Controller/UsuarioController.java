@@ -30,7 +30,7 @@ public class UsuarioController {
         List <Usuario> listaUsuarios = usuarioService.obtenerUsuarios();
         List <UsuarioDTO> listaUsuariosDTO = new ArrayList <UsuarioDTO> ();
         for (Usuario usuario: listaUsuarios) {           
-            listaUsuariosDTO.add (new UsuarioDTO (usuario.getId(), usuario.getUsuario(),usuario.getEstadoLogin()));            
+            listaUsuariosDTO.add (new UsuarioDTO (usuario.getId(), usuario.getUsuario()));            
         }
         
         return listaUsuariosDTO;
@@ -41,7 +41,7 @@ public class UsuarioController {
         
         Usuario usuario = usuarioService.obtenerUsuario(id);
         
-        UsuarioDTO usuarioDTO = new UsuarioDTO (usuario.getId(),usuario.getUsuario(),usuario.getEstadoLogin());
+        UsuarioDTO usuarioDTO = new UsuarioDTO (usuario.getId(),usuario.getUsuario());
         
         return usuarioDTO;
         
@@ -57,15 +57,11 @@ public class UsuarioController {
     }
   
     
-    @PostMapping ("/usuario/crear")
+    @PostMapping ("/crear/usuario")
     public void crearAcercaDeMi (@RequestBody Usuario usuario) {
         
      usuarioService.crearUsuario(usuario); 
 
     }
-    
-    @PostMapping ("/login")
-    public String verificarUsuario (@RequestBody Usuario usuario) {
-        return usuarioService.verificarUsuario(usuario);
-    }
+
 }

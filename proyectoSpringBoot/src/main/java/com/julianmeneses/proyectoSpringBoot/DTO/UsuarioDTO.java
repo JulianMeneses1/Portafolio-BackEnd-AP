@@ -10,12 +10,11 @@ public class UsuarioDTO implements Serializable {
     
     private Long id;
     private String nombre;
-    private boolean estado_login;
 
-    public UsuarioDTO(Long id, String nombre, boolean estado_login) {
+
+    public UsuarioDTO(Long id, String nombre) {
         this.id = id;
-        this.nombre = nombre;
-        this.estado_login = estado_login;        
+    
     }
 
     public UsuarioDTO() {

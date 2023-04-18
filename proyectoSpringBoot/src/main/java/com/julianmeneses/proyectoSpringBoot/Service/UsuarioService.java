@@ -4,6 +4,7 @@ package com.julianmeneses.proyectoSpringBoot.Service;
 import com.julianmeneses.proyectoSpringBoot.Model.Usuario;
 import com.julianmeneses.proyectoSpringBoot.Repository.UsuarioRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,26 +36,6 @@ public class UsuarioService implements IUsuarioService{
         String hashPassword = encryptService.encryptPassword(password);
         usuario.setContraseña(hashPassword);
         usuarioRepository.save(usuario);
-    }
-
-    @Override
-    public String verificarUsuario(Usuario usuario) {
-        
-        String nombreUsuario = usuario.getUsuario();
-        String password = usuario.getContraseña();
-        if (usuarioRepository.existsByUsuario(nombreUsuario)) {
-            
-            Usuario usuarioBD = usuarioRepository.findByUsuario(nombreUsuario);
-            String hashPassword = usuarioBD.getContraseña();
-            
-            if (encryptService.verifyPassword(hashPassword, password)) {
-                return "Login exitoso";
-            } else {
-                return "Contraseña incorrecta";
-            }          
-        } else {
-            return "Usuario incorrecto";
-        }
     }
 
 }
