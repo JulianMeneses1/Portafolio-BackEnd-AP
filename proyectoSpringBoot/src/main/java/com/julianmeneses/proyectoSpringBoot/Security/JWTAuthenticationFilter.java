@@ -18,6 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     
+    
     @Override
     public Authentication attemptAuthentication (HttpServletRequest request, 
                                                  HttpServletResponse response) throws AuthenticationException {
@@ -49,7 +50,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         UserDetailsImpl userDetails = (UserDetailsImpl) authResult.getPrincipal();        
         String token = TokenUtils.createToken(userDetails.getNombre());
         
-        response.addHeader("Authorization", "Bearer " + token);    
+        response.addHeader("Authorization", "Bearer " + token);
         response.getWriter().flush();
         
         super.successfulAuthentication(request, response, chain, authResult);

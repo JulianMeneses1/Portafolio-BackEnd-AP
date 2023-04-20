@@ -24,7 +24,8 @@ public class WebSecurityConfig {
     
     // inyectamos estas dependencias a través del constructor, el cual se genera con todos los argumentos mediante la anotación @AllArgsConstructor
     private final UserDetailsService userDetailsService;
-    private final JWTAuthorizationFilter jwtAuthorizationFilter;   
+    private final JWTAuthorizationFilter jwtAuthorizationFilter;  
+    
     
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http, AuthenticationManager authManager) throws Exception {
@@ -34,7 +35,7 @@ public class WebSecurityConfig {
         jwtAuthenticationFilter.setAuthenticationManager(authManager);
         jwtAuthenticationFilter.setFilterProcessesUrl("/login");  // esta va a ser la ruta para el login
         
-        http.csrf().disable().authorizeHttpRequests((authorize) -> {
+        http.cors().and().csrf().disable().authorizeHttpRequests((authorize) -> {
             try {
                 authorize
                         .requestMatchers("/obtener/**")

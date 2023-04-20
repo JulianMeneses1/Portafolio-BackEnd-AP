@@ -18,19 +18,19 @@ public class BannerController {
     @Autowired
     public IBannerService bannerService;
     
-    @GetMapping ("/banners/traer")
+    @GetMapping ("/obtener/banners")
     public List <Banner> obtenerBanners () {
         
         return bannerService.obtenerBanners();
     }
     
-    @GetMapping ("/banner/traer/{id}")
+    @GetMapping ("/obtener/banner/{id}")
     public Banner obtenerBanner (@PathVariable Long id) {
         
         return bannerService.obtenerBanner(id);
     }   
     
-    @PutMapping ("/banner/editar/{id}")
+    @PutMapping ("/editar/banner/{id}")
     public Banner editarBanner (@PathVariable Long id, 
                                         @RequestBody Banner banner) {
         banner.setId(id);
