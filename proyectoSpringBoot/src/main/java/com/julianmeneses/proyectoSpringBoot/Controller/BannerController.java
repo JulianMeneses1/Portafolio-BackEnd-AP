@@ -40,7 +40,7 @@ public class BannerController {
     }
   
     
-    @PostMapping ("/banner/crear")
+    @PostMapping ("/crear/banner")
     public void crearBanner (@RequestBody Banner banner) {
         
      bannerService.crearBanner(banner); 

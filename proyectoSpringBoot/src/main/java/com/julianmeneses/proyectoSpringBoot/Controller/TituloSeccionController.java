@@ -18,20 +18,20 @@ public class TituloSeccionController {
     @Autowired
     public ITituloSeccionService tituloSeccionService;
     
-    @GetMapping ("/titulosecciones/traer")
+    @GetMapping ("/obtener/titulosecciones")
     public List <TituloSeccion> obtenerTitulos () {
         
         return tituloSeccionService.obtenerTitulos();
     }
     
-    @GetMapping ("/tituloseccion/traer/{id}")
+    @GetMapping ("/obtener/tituloseccion/{id}")
     public TituloSeccion obtenerTitulo (@PathVariable Long id) {
         
         return tituloSeccionService.obtenerTitulo(id);
         
     }   
     
-    @PutMapping ("/tituloseccion/editar/{id}")
+    @PutMapping ("/editar/tituloseccion/{id}")
     public void editarTitulo (@PathVariable Long id, 
                               @RequestBody TituloSeccion titulo) {
         titulo.setId(id);
@@ -40,7 +40,7 @@ public class TituloSeccionController {
     }
   
     
-    @PostMapping ("/tituloseccion/crear")
+    @PostMapping ("/crear/tituloseccion")
     public void crearTitulo (@RequestBody TituloSeccion titulo) {
         
      tituloSeccionService.crearTitulo(titulo);

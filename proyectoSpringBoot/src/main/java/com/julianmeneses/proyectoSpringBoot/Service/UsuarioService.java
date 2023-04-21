@@ -4,7 +4,6 @@ package com.julianmeneses.proyectoSpringBoot.Service;
 import com.julianmeneses.proyectoSpringBoot.Model.Usuario;
 import com.julianmeneses.proyectoSpringBoot.Repository.UsuarioRepository;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

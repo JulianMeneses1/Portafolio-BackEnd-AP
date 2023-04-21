@@ -31,7 +31,7 @@ public class PersonaController {
         
     }
     
-    @PutMapping ("/persona/editar/{id}")
+    @PutMapping ("/editar/persona/{id}")
     public void editarPersona (@PathVariable Long id, 
                                @RequestBody Persona persona) {
         
@@ -43,7 +43,7 @@ public class PersonaController {
         
     }
     
-    @PostMapping ("/persona/crear")
+    @PostMapping ("/crear/persona")
     public void crearPersona (@RequestBody Persona persona) {
         personaService.crearPersona(persona);
     }

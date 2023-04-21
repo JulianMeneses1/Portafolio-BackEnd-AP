@@ -19,20 +19,20 @@ public class ExperienciaLaboralController {
     @Autowired
     public IExperienciaLaboralService experienciaService;
     
-    @GetMapping ("/experiencias/traer")
+    @GetMapping ("/obtener/experiencias")
     public List <ExperienciaLaboral> obtenerExperiencias () {
         
         return experienciaService.obtenerExperiencias();
     }
     
-    @GetMapping ("/experiencia/traer/{id}")
+    @GetMapping ("/obtener/experiencia/{id}")
     public ExperienciaLaboral obtenerExperiencia (@PathVariable Long id) {
         
         return experienciaService.obtenerExperiencia(id);
         
     }   
     
-    @PutMapping ("/experiencia/editar/{id}")
+    @PutMapping ("/editar/experiencia/{id}")
     public void editarExperiencia (@PathVariable Long id, 
                               @RequestBody ExperienciaLaboral exp) {
         
@@ -42,14 +42,14 @@ public class ExperienciaLaboralController {
     }
   
     
-    @PostMapping ("/experiencia/crear")
+    @PostMapping ("/crear/experiencia")
     public void crearExperiencia (@RequestBody ExperienciaLaboral exp) {
         
      experienciaService.crearExperiencia(exp);
 
     }    
     
-    @DeleteMapping ("/experiencia/eliminar/{id}")
+    @DeleteMapping ("/eliminar/experiencia/{id}")
     public void eliminarExperiencia (@PathVariable Long id) {
         experienciaService.borrarExperiencia(id);
     }

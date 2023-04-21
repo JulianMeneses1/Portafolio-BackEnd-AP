@@ -24,7 +24,7 @@ public class UsuarioController {
     @Autowired
     public IEncryptService encryptService;
     
-    @GetMapping ("/usuarios/traer")
+    @GetMapping ("/obtener/usuarios")
     public List <UsuarioDTO> obtenerUsuarios () {
         
         List <Usuario> listaUsuarios = usuarioService.obtenerUsuarios();
@@ -36,7 +36,7 @@ public class UsuarioController {
         return listaUsuariosDTO;
     }
     
-    @GetMapping ("/usuario/traer/{id}")
+    @GetMapping ("/obtener/usuario/{id}")
     public UsuarioDTO obtenerBanner (@PathVariable Long id) {
         
         Usuario usuario = usuarioService.obtenerUsuario(id);
@@ -47,7 +47,7 @@ public class UsuarioController {
         
     }   
     
-    @PutMapping ("/usuario/editar/{id}")
+    @PutMapping ("/editar/usuario/{id}")
     public Usuario editarAcercaDeMi (@PathVariable Long id, 
                                      @RequestBody Usuario usuario) {
         usuario.setId(id);

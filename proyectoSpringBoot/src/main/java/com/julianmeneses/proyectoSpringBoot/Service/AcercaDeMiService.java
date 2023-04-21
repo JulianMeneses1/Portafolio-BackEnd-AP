@@ -2,7 +2,6 @@
 package com.julianmeneses.proyectoSpringBoot.Service;
 
 import com.julianmeneses.proyectoSpringBoot.Model.AcercaDeMi;
-import com.julianmeneses.proyectoSpringBoot.Model.Persona;
 import com.julianmeneses.proyectoSpringBoot.Repository.AcercaDeMiRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

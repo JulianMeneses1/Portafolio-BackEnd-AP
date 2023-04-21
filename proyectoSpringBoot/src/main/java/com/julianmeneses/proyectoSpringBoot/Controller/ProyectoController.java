@@ -1,9 +1,7 @@
 
 package com.julianmeneses.proyectoSpringBoot.Controller;
 
-import com.julianmeneses.proyectoSpringBoot.Model.Conocimiento;
 import com.julianmeneses.proyectoSpringBoot.Model.Proyecto;
-import com.julianmeneses.proyectoSpringBoot.Service.IConocimientoService;
 import com.julianmeneses.proyectoSpringBoot.Service.IProyectoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,20 +19,20 @@ public class ProyectoController {
     @Autowired
     public IProyectoService proyectoService;
     
-    @GetMapping ("/proyectos/traer")
+    @GetMapping ("/obtener/proyectos")
     public List <Proyecto> obtenerProyectos () {
         
         return proyectoService.obtenerProyectos();
     }
     
-    @GetMapping ("/proyecto/traer/{id}")
+    @GetMapping ("/obtener/proyecto/{id}")
     public Proyecto obtenerProyecto (@PathVariable Long id) {
         
         return proyectoService.obtenerProyecto(id);
         
     }   
     
-    @PutMapping ("/proyecto/editar/{id}")
+    @PutMapping ("/editar/proyecto/{id}")
     public void editarProyecto (@PathVariable Long id, 
                                     @RequestBody Proyecto proyecto) {
         
@@ -44,14 +42,14 @@ public class ProyectoController {
     }
   
     
-    @PostMapping ("/proyecto/crear")
+    @PostMapping ("/crear/proyecto")
     public void crearProyecto (@RequestBody Proyecto proyecto) {
         
      proyectoService.crearProyecto(proyecto);
 
     }    
     
-    @DeleteMapping ("/proyecto/eliminar/{id}")
+    @DeleteMapping ("/eliminar/proyecto/{id}")
     public void eliminarProyecto (@PathVariable Long id) {
         proyectoService.borrarProyecto(id);
     }

@@ -1,9 +1,7 @@
 
 package com.julianmeneses.proyectoSpringBoot.Controller;
 
-import com.julianmeneses.proyectoSpringBoot.Model.Conocimiento;
 import com.julianmeneses.proyectoSpringBoot.Model.FormacionAcademica;
-import com.julianmeneses.proyectoSpringBoot.Service.IConocimientoService;
 import com.julianmeneses.proyectoSpringBoot.Service.IFormacionAcademicaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,20 +19,20 @@ public class FormacionAcademicaController {
     @Autowired
     public IFormacionAcademicaService formacionService;
     
-    @GetMapping ("/formaciones/traer")
+    @GetMapping ("/obtener/formaciones")
     public List <FormacionAcademica> obtenerFormaciones () {
         
         return formacionService.obtenerFormaciones();
     }
     
-    @GetMapping ("/formacion/traer/{id}")
+    @GetMapping ("/obtener/formacion/{id}")
     public FormacionAcademica obtenerFormacion (@PathVariable Long id) {
         
         return formacionService.obtenerFormacion(id);
         
     }   
     
-    @PutMapping ("/formacion/editar/{id}")
+    @PutMapping ("/editar/formacion/{id}")
     public void editarFormacion (@PathVariable Long id, 
                               @RequestBody FormacionAcademica formacion) {
         
@@ -44,14 +42,14 @@ public class FormacionAcademicaController {
     }
   
     
-    @PostMapping ("/formacion/crear")
+    @PostMapping ("/crear/formacion")
     public void crearFormacion (@RequestBody FormacionAcademica formacion) {
         
      formacionService.crearFormacion(formacion);
 
     }    
     
-    @DeleteMapping ("/formacion/eliminar/{id}")
+    @DeleteMapping ("/eliminar/formacion/{id}")
     public void eliminarFormacion (@PathVariable Long id) {
         formacionService.borrarFormacion(id);
     }

@@ -19,21 +19,19 @@ public class AcercaDeMiController {
     public IAcercaDeMiService acercaService;
     
     
-    @GetMapping ("/acercademi/traer")
+    @GetMapping ("/obtener/acercademi")
     public List <AcercaDeMi> obtenerAcercaDeMi () {
         
         return acercaService.obtenerAcercaDeMi();
     } 
     
-    @GetMapping ("/acercademi/traer/{id}")
+    @GetMapping ("/obtener/acercademi/{id}")
     public AcercaDeMi obtenerAcercaDeMi (@PathVariable Long id) {
-        
-        AcercaDeMi acerca = acercaService.obtenerAcerca(id);
         
         return acercaService.obtenerAcerca(id);
     }
     
-    @PutMapping ("/acercademi/editar/{id}")
+    @PutMapping ("/editar/acercademi/{id}")
     public AcercaDeMi editarAcercaDeMi (@PathVariable Long id, 
                                         @RequestBody AcercaDeMi acerca) {
         

@@ -19,20 +19,20 @@ public class ConocimientoController {
     @Autowired
     public IConocimientoService conocimientoService;
     
-    @GetMapping ("/conocimientos/traer")
+    @GetMapping ("/obtener/conocimientos")
     public List <Conocimiento> obtenerConocimientos () {
         
         return conocimientoService.obtenerConocimientos();
     }
     
-    @GetMapping ("/conocimiento/traer/{id}")
+    @GetMapping ("/obtener/conocimiento/{id}")
     public Conocimiento obtenerConocimiento (@PathVariable Long id) {
         
         return conocimientoService.obtenerConocimiento(id);
         
     }   
     
-    @PutMapping ("/conocimiento/editar/{id}")
+    @PutMapping ("/editar/conocimiento/{id}")
     public void editarConocimiento (@PathVariable Long id, 
                               @RequestBody Conocimiento conocimiento) {
         
@@ -42,14 +42,14 @@ public class ConocimientoController {
     }
   
     
-    @PostMapping ("/conocimiento/crear")
+    @PostMapping ("/crear/conocimiento")
     public void crearConocimiento (@RequestBody Conocimiento conocimiento) {
         
      conocimientoService.crearConocimiento(conocimiento);
 
     }    
     
-    @DeleteMapping ("/conocimiento/eliminar/{id}")
+    @DeleteMapping ("/eliminar/conocimiento/{id}")
     public void eliminarConocimiento (@PathVariable Long id) {
         conocimientoService.borrarConocimiento(id);
     }
