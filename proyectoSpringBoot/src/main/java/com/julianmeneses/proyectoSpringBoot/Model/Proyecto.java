@@ -1,6 +1,7 @@
 
 package com.julianmeneses.proyectoSpringBoot.Model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Proyecto {
     @SequenceGenerator(name = "proyectos_seq", sequenceName = "proyectos_seq", allocationSize = 1) 
     private Long id;
     private String imagen;
+    @Column(length = 1000)
     private String descripcion;
     private String nombre;
     private Date fecha_inicio;

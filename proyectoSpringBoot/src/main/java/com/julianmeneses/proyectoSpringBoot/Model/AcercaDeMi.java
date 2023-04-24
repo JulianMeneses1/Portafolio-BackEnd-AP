@@ -2,6 +2,7 @@
 package com.julianmeneses.proyectoSpringBoot.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +23,7 @@ public class AcercaDeMi {
     @SequenceGenerator(name = "acerca_de_mi_seq", sequenceName = "acerca_de_mi_seq", allocationSize = 1)
     private Long id;
     private String titulo;
+    @Column(length = 1000)
     private String descripcion;
     
     @JsonIgnore

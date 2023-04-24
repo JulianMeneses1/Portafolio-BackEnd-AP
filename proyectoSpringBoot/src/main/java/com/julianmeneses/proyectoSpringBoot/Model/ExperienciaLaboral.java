@@ -1,6 +1,7 @@
 
 package com.julianmeneses.proyectoSpringBoot.Model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class ExperienciaLaboral {
     @SequenceGenerator(name = "experiencias_laborales_seq", sequenceName = "experiencias_laborales_seq", allocationSize = 1) 
     private Long id;
     private String nombre_empresa;
+    @Column(length = 1000)
     private String descripcion;
     private Date fecha_inicio;
     private Date fecha_fin;

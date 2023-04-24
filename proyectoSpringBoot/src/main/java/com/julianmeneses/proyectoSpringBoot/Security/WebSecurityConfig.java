@@ -40,7 +40,7 @@ public class WebSecurityConfig {
                 authorize
                         .requestMatchers("/obtener/**")
                         .permitAll()  // todas las request que empiecen con obtener (todos los GET) no requieren token
-                        .requestMatchers("/editar/**", "/crear/**", "/eliminar/**")
+                        .requestMatchers("/editar/**", "/crear/**", "/eliminar/**", "/subir/archivo")
                         .authenticated() // todas las request que empiecen con editar, eliminar o crear están protegidas, requieren un token (todos los PUT, DELETE y POST)
                         .anyRequest()
                         .denyAll()

@@ -44,7 +44,7 @@ public class AcercaDeMiController {
         return acerca;
     }
     
-    @PostMapping ("/acercademi/crear")
+    @PostMapping ("/crear/acercademi")
     public void crearAcercaDeMi (@RequestBody AcercaDeMi acerca) {
         
      acercaService.crearAcercaDeMi(acerca); 
