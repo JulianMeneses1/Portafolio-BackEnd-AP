@@ -13,7 +13,7 @@ public interface IFormacionAcademicaService {
     public FormacionAcademica obtenerFormacion (Long id);  
     
     public void editarFormacion (FormacionAcademica formacion, String nombre, String descripcion, Date fecha_inicio,
-                                 Date fecha_fin);
+                                 Date fecha_fin, String imagen, String institucion);
     
     public void borrarFormacion (Long id);
     

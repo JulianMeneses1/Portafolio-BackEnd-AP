@@ -11,7 +11,7 @@ public interface IConocimientoService {
     
     public Conocimiento obtenerConocimiento(Long id);  
     
-    public void editarConocimiento (Conocimiento conoc,String icono, String  nombre, String porcentaje_progreso);
+    public void editarConocimiento (Conocimiento conoc,String icono, String  nombre, String nivel);
     
     public void borrarConocimiento (Long id);
     

@@ -26,10 +26,12 @@ public class FormacionAcademicaService implements IFormacionAcademicaService {
 
     @Override
     public void editarFormacion (FormacionAcademica formacion, String nombre, String descripcion, Date fecha_inicio,
-                                 Date fecha_fin)
+                                 Date fecha_fin, String imagen, String institucion)
      {
         
         formacion.setNombre(nombre);
+        formacion.setImagen(imagen);
+        formacion.setInstitucion(institucion);
         formacion.setDescripcion(descripcion);
         formacion.setDescripcion(descripcion);
         formacion.setFecha_inicio(fecha_inicio);

@@ -25,10 +25,10 @@ public class ConocimientoService implements IConocimientoService {
     }
 
     @Override
-    public void editarConocimiento(Conocimiento conoc, String icono, String nombre, String porcentaje_progreso) {
-        conoc.setIcono(icono);
+    public void editarConocimiento(Conocimiento conoc, String imagen, String nombre, String nivel) {
+        conoc.setImagen(imagen);
         conoc.setNombre(nombre);
-        conoc.setPorcentaje_progreso(porcentaje_progreso);
+        conoc.setNivel(nivel);
         
         conocRepository.save(conoc);
     }

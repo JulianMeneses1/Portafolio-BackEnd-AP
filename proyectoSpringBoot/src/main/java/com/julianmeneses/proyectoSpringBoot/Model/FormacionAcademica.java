@@ -29,6 +29,8 @@ public class FormacionAcademica {
     private String descripcion;
     private Date fecha_inicio;
     private Date fecha_fin;
+    private String institucion;
+    private String imagen;
     
     @ManyToOne 
     @JoinColumn (name = "persona_id")
@@ -38,15 +40,19 @@ public class FormacionAcademica {
     @JoinColumn (name = "titulo_seccion_id")
     private TituloSeccion titulo_seccion;    
 
-    public FormacionAcademica(Long id, String nombre, String descripcion, Date fecha_inicio, Date fecha_fin, Persona persona, TituloSeccion titulo_seccion) {
+    public FormacionAcademica(Long id, String nombre, String descripcion, Date fecha_inicio, Date fecha_fin, String institucion, String imagen, Persona persona, TituloSeccion titulo_seccion) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
+        this.institucion = institucion;
+        this.imagen = imagen;
         this.persona = persona;
         this.titulo_seccion = titulo_seccion;
     }
+
+    
 
     
     public FormacionAcademica() {

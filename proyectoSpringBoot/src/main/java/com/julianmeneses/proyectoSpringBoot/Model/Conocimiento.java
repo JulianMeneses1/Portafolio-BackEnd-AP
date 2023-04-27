@@ -21,10 +21,9 @@ public class Conocimiento {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "conocimientos_seq", sequenceName = "conocimientos_seq", allocationSize = 1)  
     private Long id;
-    private String icono;
+    private String imagen;
     private String nombre;
-    private String porcentaje_progreso;
-    
+    private String nivel;    
     
     @ManyToOne
     @JoinColumn (name = "persona_id")
@@ -34,11 +33,11 @@ public class Conocimiento {
     @JoinColumn (name = "titulo_seccion_id")
     private TituloSeccion titulo_seccion;    
 
-    public Conocimiento(Long id, String icono, String nombre, String porcentaje_progreso, Persona persona, TituloSeccion titulo_seccion) {
+    public Conocimiento(Long id, String imagen, String nombre, String nivel, Persona persona, TituloSeccion titulo_seccion) {
         this.id = id;
-        this.icono = icono;
+        this.imagen = imagen;
         this.nombre = nombre;
-        this.porcentaje_progreso = porcentaje_progreso;
+        this.nivel = nivel;
         this.persona = persona;
         this.titulo_seccion = titulo_seccion;
     }
