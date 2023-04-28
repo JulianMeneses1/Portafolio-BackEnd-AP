@@ -1,7 +1,6 @@
 
 package com.julianmeneses.proyectoSpringBoot.Service;
 
-import com.julianmeneses.proyectoSpringBoot.Model.Persona;
 import com.julianmeneses.proyectoSpringBoot.Model.Proyecto;
 import com.julianmeneses.proyectoSpringBoot.Repository.ProyectoRepository;
 import java.util.List;

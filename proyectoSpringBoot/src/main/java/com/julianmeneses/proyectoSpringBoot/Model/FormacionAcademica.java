@@ -1,7 +1,6 @@
 
 package com.julianmeneses.proyectoSpringBoot.Model;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +10,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,10 +25,12 @@ public class FormacionAcademica {
     private String nombre;
     @Column(length = 1000)
     private String descripcion;
-    private Date fecha_inicio;
-    private Date fecha_fin;
+    private String fecha_inicio;
+    private String fecha_fin;
     private String institucion;
     private String imagen;
+    private String url_certificado;
+    private String url_institucion;
     
     @ManyToOne 
     @JoinColumn (name = "persona_id")
@@ -40,7 +40,9 @@ public class FormacionAcademica {
     @JoinColumn (name = "titulo_seccion_id")
     private TituloSeccion titulo_seccion;    
 
-    public FormacionAcademica(Long id, String nombre, String descripcion, Date fecha_inicio, Date fecha_fin, String institucion, String imagen, Persona persona, TituloSeccion titulo_seccion) {
+    public FormacionAcademica(Long id, String nombre, String descripcion, String fecha_inicio, 
+            String fecha_fin, String institucion, String imagen, String url_certificado, String url_institucion, 
+            Persona persona, TituloSeccion titulo_seccion) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -48,9 +50,13 @@ public class FormacionAcademica {
         this.fecha_fin = fecha_fin;
         this.institucion = institucion;
         this.imagen = imagen;
+        this.url_certificado = url_certificado;
+        this.url_institucion = url_institucion;
         this.persona = persona;
         this.titulo_seccion = titulo_seccion;
     }
+
+   
 
     
 

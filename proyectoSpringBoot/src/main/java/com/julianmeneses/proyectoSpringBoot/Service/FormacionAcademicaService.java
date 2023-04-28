@@ -3,7 +3,6 @@ package com.julianmeneses.proyectoSpringBoot.Service;
 
 import com.julianmeneses.proyectoSpringBoot.Model.FormacionAcademica;
 import com.julianmeneses.proyectoSpringBoot.Repository.FormacionAcademicaRepository;
-import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,14 +24,15 @@ public class FormacionAcademicaService implements IFormacionAcademicaService {
     }
 
     @Override
-    public void editarFormacion (FormacionAcademica formacion, String nombre, String descripcion, Date fecha_inicio,
-                                 Date fecha_fin, String imagen, String institucion)
+    public void editarFormacion (FormacionAcademica formacion, String nombre, String descripcion, String fecha_inicio,
+                                 String fecha_fin, String imagen, String institucion, String url_certificado, String url_institucion)
      {
         
         formacion.setNombre(nombre);
         formacion.setImagen(imagen);
         formacion.setInstitucion(institucion);
-        formacion.setDescripcion(descripcion);
+        formacion.setUrl_certificado(url_certificado);
+        formacion.setUrl_institucion(url_institucion);
         formacion.setDescripcion(descripcion);
         formacion.setFecha_inicio(fecha_inicio);
         formacion.setFecha_fin(fecha_fin);

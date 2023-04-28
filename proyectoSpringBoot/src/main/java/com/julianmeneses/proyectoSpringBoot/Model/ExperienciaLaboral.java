@@ -10,7 +10,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,8 +25,8 @@ public class ExperienciaLaboral {
     private String nombre_empresa;
     @Column(length = 1000)
     private String descripcion;
-    private Date fecha_inicio;
-    private Date fecha_fin;
+    private String fecha_inicio;
+    private String fecha_fin;
     private String puesto;
     private String url;
     private String posicion_Y;
@@ -40,7 +39,7 @@ public class ExperienciaLaboral {
     @JoinColumn (name = "titulo_seccion_id")
     private TituloSeccion titulo_seccion;    
 
-    public ExperienciaLaboral(Long id, String nombre_empresa, String descripcion, Date fecha_inicio, Date fecha_fin, String puesto, String url, String posicion_Y, Persona persona, TituloSeccion titulo_seccion) {
+    public ExperienciaLaboral(Long id, String nombre_empresa, String descripcion, String fecha_inicio, String fecha_fin, String puesto, String url, String posicion_Y, Persona persona, TituloSeccion titulo_seccion) {
         this.id = id;
         this.nombre_empresa = nombre_empresa;
         this.descripcion = descripcion;

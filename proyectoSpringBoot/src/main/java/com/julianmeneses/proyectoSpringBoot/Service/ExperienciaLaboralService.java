@@ -25,7 +25,7 @@ public class ExperienciaLaboralService implements IExperienciaLaboralService {
     }
 
     @Override
-    public void editarExperiencia(ExperienciaLaboral exp, String nombre_empresa, String descripcion, Date fecha_inicio, Date fecha_fin, String puesto, 
+    public void editarExperiencia(ExperienciaLaboral exp, String nombre_empresa, String descripcion, String fecha_inicio, String fecha_fin, String puesto, 
         String url, String posicion_Y) {
         
         exp.setNombre_empresa(nombre_empresa);
