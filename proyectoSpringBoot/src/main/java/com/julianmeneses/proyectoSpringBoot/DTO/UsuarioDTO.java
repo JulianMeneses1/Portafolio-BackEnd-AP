@@ -9,11 +9,12 @@ import lombok.Setter;
 public class UsuarioDTO implements Serializable {
     
     private Long id;
-    private String nombre;
+    private String usuario;
 
 
-    public UsuarioDTO(Long id, String nombre) {
+    public UsuarioDTO(Long id, String usuario) {
         this.id = id;
+        this.usuario = usuario;
     
     }
 
