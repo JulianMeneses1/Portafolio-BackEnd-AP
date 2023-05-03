@@ -1,6 +1,4 @@
-FROM amazoncorretto:17-alpine-full
-
-MAINTAINER JulianMeneses
+FROM amazoncorretto:17
 
 EXPOSE 8080
 
