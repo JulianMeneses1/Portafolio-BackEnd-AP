@@ -1,6 +1,6 @@
-FROM amazoncorretto:17-alpine
+FROM amazoncorretto:17-alpine-full
 
-EXPOSE 8080
+MAINTAINER JulianMeneses
 
 COPY proyectoSpringBoot/target/proyectoSpringBoot-0.0.1-SNAPSHOT.jar app.jar
 
