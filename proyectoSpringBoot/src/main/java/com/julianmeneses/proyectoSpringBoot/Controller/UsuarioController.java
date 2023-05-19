@@ -37,7 +37,7 @@ public class UsuarioController {
     }
     
     @GetMapping ("/obtener/usuario/{id}")
-    public UsuarioDTO obtenerBanner (@PathVariable Long id) {
+    public UsuarioDTO obtenerUsuario (@PathVariable Long id) {
         
         Usuario usuario = usuarioService.obtenerUsuario(id);
         
@@ -48,7 +48,7 @@ public class UsuarioController {
     }   
     
     @PutMapping ("/editar/usuario/{id}")
-    public Usuario editarAcercaDeMi (@PathVariable Long id, 
+    public Usuario editarUsuario (@PathVariable Long id, 
                                      @RequestBody Usuario usuario) {
         usuario.setId(id);
         usuarioService.crearUsuario(usuario); 
@@ -58,7 +58,7 @@ public class UsuarioController {
   
     
     @PostMapping ("/crear/usuario")
-    public void crearAcercaDeMi (@RequestBody Usuario usuario) {
+    public void crearUsuario (@RequestBody Usuario usuario) {
         
      usuarioService.crearUsuario(usuario); 
 
