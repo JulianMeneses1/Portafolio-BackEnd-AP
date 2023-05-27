@@ -43,9 +43,10 @@ public class ProyectoController {
   
     
     @PostMapping ("/crear/proyecto")
-    public void crearProyecto (@RequestBody Proyecto proyecto) {
+    public Proyecto crearProyecto (@RequestBody Proyecto proyecto) {
         
      proyectoService.crearProyecto(proyecto);
+     return proyecto;
 
     }    
     

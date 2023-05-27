@@ -43,9 +43,10 @@ public class ExperienciaLaboralController {
   
     
     @PostMapping ("/crear/experiencia")
-    public void crearExperiencia (@RequestBody ExperienciaLaboral exp) {
+    public ExperienciaLaboral crearExperiencia (@RequestBody ExperienciaLaboral exp) {
         
      experienciaService.crearExperiencia(exp);
+     return exp;
 
     }    
     

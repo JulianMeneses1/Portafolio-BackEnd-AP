@@ -43,10 +43,10 @@ public class FormacionAcademicaController {
   
     
     @PostMapping ("/crear/formacion")
-    public void crearFormacion (@RequestBody FormacionAcademica formacion) {
+    public FormacionAcademica crearFormacion (@RequestBody FormacionAcademica formacion) {
         
      formacionService.crearFormacion(formacion);
-
+     return formacion;
     }    
     
     @DeleteMapping ("/eliminar/formacion/{id}")

@@ -39,13 +39,12 @@ public class ConocimientoController {
         conocimiento.setId(id);
         conocimientoService.crearConocimiento(conocimiento);
       
-    }
-  
+    }  
     
     @PostMapping ("/crear/conocimiento")
-    public void crearConocimiento (@RequestBody Conocimiento conocimiento) {
-        
+    public Conocimiento crearConocimiento (@RequestBody Conocimiento conocimiento) {        
      conocimientoService.crearConocimiento(conocimiento);
+     return conocimiento;
 
     }    
     
