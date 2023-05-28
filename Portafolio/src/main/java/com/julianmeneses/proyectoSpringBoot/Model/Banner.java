@@ -7,7 +7,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,8 +17,7 @@ import lombok.Setter;
 public class Banner {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "banners_seq", sequenceName = "banners_seq", allocationSize = 1)    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  
     private Long id;
     private String imagen_banner;
     private String imagen_perfil;

@@ -8,7 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,8 +18,7 @@ import lombok.Setter;
 public class ExperienciaLaboral {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "experiencias_laborales_seq", sequenceName = "experiencias_laborales_seq", allocationSize = 1) 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre_empresa;
     @Column(length = 1000)
