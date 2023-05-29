@@ -33,8 +33,8 @@ public class StorageService implements IStorageService {
     @Override
     @PostConstruct
     public void init() throws IOException {
-        rootLocation = Paths.get(mediaLocation);
-        Files.createDirectories(rootLocation);
+       rootLocation = Paths.get(mediaLocation);
+       Files.createDirectories(rootLocation);
         
     }
     
