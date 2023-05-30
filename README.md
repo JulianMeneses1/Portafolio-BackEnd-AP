@@ -19,6 +19,8 @@ Here are the technologies and libraries used in this project:
 * Spring Boot DevTools
 * Lombok
 * MySQL Driver
+* Spring Starter Validation
+* Spring Webmvc-ui
 ## 3. :hammer_and_wrench: Installation
 ***
 The IDE I used for this proyect is [Apache NetBeans 17](https://netbeans.apache.org/), but you can use another if you want.
