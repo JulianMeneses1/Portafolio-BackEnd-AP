@@ -45,7 +45,6 @@ com\julianmeneses\proyectoSpringBoot\ProyectoSpringBootApplication.class
 com\julianmeneses\proyectoSpringBoot\Model\ExperienciaLaboral.class
 com\julianmeneses\proyectoSpringBoot\Service\ITituloSeccionService.class
 com\julianmeneses\proyectoSpringBoot\Model\Proyecto.class
-.netbeans_automatic_build
 com\julianmeneses\proyectoSpringBoot\Security\CorsConfig$1.class
 com\julianmeneses\proyectoSpringBoot\Controller\ProyectoController.class
 com\julianmeneses\proyectoSpringBoot\Service\IConocimientoService.class
