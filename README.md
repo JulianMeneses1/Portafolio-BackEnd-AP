@@ -53,7 +53,11 @@ spring.main.allow-circular-references=true
 ```
 Great, all the configuration is set up, now you can run the server. :warning: Remember to have the database already created in MySQL, otherwise you will not be able to run the server. To create the database you can use MySQL Workbench or another administrator as phpMyAdmin.
 
-## 4. :wave: Collaboration
+## 4. :information_source: API Documentation Swagger
+***
+Check the full documentation of the API in this [link](https://portafolio-backend-ap-production.up.railway.app/swagger-ui/index.html)
+
+## 5. :wave: Collaboration
 ***
 Feel free to make any suggestion that you think can help improve the quality of the project! :grinning:
 
