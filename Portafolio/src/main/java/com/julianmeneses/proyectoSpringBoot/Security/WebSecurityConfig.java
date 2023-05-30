@@ -38,7 +38,7 @@ public class WebSecurityConfig {
         http.cors().and().csrf().disable().authorizeHttpRequests((authorize) -> {
             try {
                 authorize
-                        .requestMatchers("/obtener/**", "/enviarmail","/swagger-ui/**", "/v3/api-docs/swagger-config")
+                        .requestMatchers("/obtener/**", "/enviarmail","/swagger-ui/**", "/v3/**")
                         .permitAll()  // todas las request que empiecen con obtener (todos los GET) no requieren token
                         .requestMatchers("/editar/**", "/crear/**", "/eliminar/**", "/subir/archivo")
                         .authenticated() // todas las request que empiecen con editar, eliminar o crear están protegidas, requieren un token (todos los PUT, DELETE y POST)
