@@ -9,6 +9,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.text.Normalizer;
+import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -46,7 +48,7 @@ public class StorageService implements IStorageService {
                 if (file.isEmpty()) {
                 throw new RuntimeException("No se puede almacenar un archivo vacío");
                 }
-            String filename = file.getOriginalFilename();
+            String filename = removeAccents(file.getOriginalFilename());
             Path destinationFile = rootLocation.resolve(Paths.get(filename))
                     .normalize().toAbsolutePath();
             
@@ -78,5 +80,12 @@ public class StorageService implements IStorageService {
         } catch (MalformedURLException e) {
             throw new RuntimeException("No se pudo leer el archivo" + filename);
         }
+    }
+    
+    // función para remover tildes de los nombres de los archivos
+    public static String removeAccents(String input) {
+        String normalized = Normalizer.normalize(input, Normalizer.Form.NFD);
+        Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+        return pattern.matcher(normalized).replaceAll("");
     }
 }
